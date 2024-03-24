@@ -3,6 +3,7 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 export const content = [
     "./components/**/*.{js,vue,ts}",
     "./layouts/**/*.vue",
+    "./pages/*.vue",
     "./pages/**/*.vue",
     "./plugins/**/*.{js,ts}",
     "./app.vue",
@@ -12,7 +13,7 @@ export const content = [
 export const safelist = [
     'safelisted',
     {
-        pattern: /(bg|text)-(gray5|gray12|gray89)/,
+        pattern: /(bg|text|border|from)-(gray5|gray12|gray89)/,
     },
 ]
 export const theme = {
