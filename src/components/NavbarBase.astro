@@ -1,0 +1,14 @@
+---
+import NavbarMobile from "./NavbarMobile.astro";
+import NavbarDesktop from "./NavbarDesktop.astro";
+---
+
+<div class="fixed top-0 h-14 w-full border-b border-black px-7">
+    <div class="flex sm:hidden w-full h-full">
+        <NavbarMobile/>
+    </div>
+    
+    <div class="hidden sm:flex w-full h-full">
+        <NavbarDesktop/>
+    </div>
+</div>
