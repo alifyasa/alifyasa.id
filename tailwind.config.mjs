@@ -4,7 +4,11 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				'satoshi': ['satoshi', 'sans-serif'], // Add this line
+				'satoshi': [
+					'Satoshi', 'Helvetica', 'ui-sans-serif', 
+					'system-ui', 'sans-serif', "Apple Color Emoji", 
+					"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+				],
 			},			
 			colors: {
 				'deep-black': '#0D0D0D',

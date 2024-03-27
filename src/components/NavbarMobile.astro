@@ -1,1 +1,48 @@
-<p>Mobile Navbar</p>
+<div class="flex flex-col w-full">
+    <div class="flex justify-end px-3.5 h-14">
+        <button class="my-auto" id="navbar-mobile-button">
+            <span
+                id="navbar-mobile-icon"
+                class="material-symbols-outlined text-3xl">menu</span
+            >
+        </button>
+    </div>
+    <ul
+        id="navbar-mobile-dropdown"
+        class="hidden flex-col text-lg bg-light-gray z-10 absolute top-14 w-full px-4 border-b border-deep-black"
+    >
+        <li class="py-4 border-b border-deep-black">
+            <a class="flex items-center w-full" href="/">Home</a>
+        </li>
+        <li class="py-4 border-b border-deep-black">
+            <a class="flex items-center w-full" href="/projects">Projects</a>
+        </li>
+        <li class="py-4">
+            <a class="flex items-center w-full" href="/about-me">About Me</a>
+        </li>
+    </ul>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const navbarButton = document.getElementById("navbar-mobile-button");
+        const navbarIcon = document.getElementById("navbar-mobile-icon");
+        const dropdown = document.getElementById("navbar-mobile-dropdown");
+        let navbarExpanded = false;
+
+        const toggleExpandNavbar = () => {
+            if (navbarIcon) {
+                navbarExpanded = !navbarExpanded;
+                if (navbarExpanded) {
+                    navbarIcon.textContent = "expand_less";
+                    dropdown?.classList.remove("hidden");
+                } else {
+                    navbarIcon.textContent = "menu";
+                    dropdown?.classList.add("hidden");
+                }
+            }
+        };
+
+        navbarButton?.addEventListener("click", toggleExpandNavbar);
+    });
+</script>
