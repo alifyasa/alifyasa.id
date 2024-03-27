@@ -8,13 +8,13 @@ import NavbarBase from "../components/NavbarBase.astro"
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1&display=swap" rel="stylesheet"> 
   </head>
-  <body class="font-satoshi">
+  <body class="font-satoshi bg-light-gray text-deep-black">
     <header>
       <NavbarBase />
     </header>
-    <main class="absolute top-14 p-7 pb-14 w-full">
+    <main class="absolute top-14 p-7 pb-14 w-3/5 text-lg">
       <article>
-        <h1 class="text-3xl font-medium pb-3.5">{title}</h1>
+        <h1 class="text-4xl font-medium pb-3.5">{title}</h1>
         <section>
           <slot />
         </section>
