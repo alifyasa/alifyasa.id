@@ -4,10 +4,16 @@
             <a class="flex items-center h-full" href="/">Home</a>
         </div>
         <button class="my-auto" id="navbar-mobile-button">
-            <span
-                id="navbar-mobile-icon"
-                class="material-symbols-outlined text-3xl">menu</span
-            >
+            <img 
+                id="navbar-mobile-icon-menu" 
+                src="/icons/menu.svg" 
+                class="size-7"
+            />
+            <img 
+                id="navbar-mobile-icon-expand_less" 
+                src="/icons/expand_less.svg" 
+                class="size-7 hidden"
+            />
         </button>
     </div>
     <ul
@@ -26,19 +32,22 @@
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const navbarButton = document.getElementById("navbar-mobile-button");
-        const navbarIcon = document.getElementById("navbar-mobile-icon");
+        const navbarIconExpandLess = document.getElementById("navbar-mobile-icon-expand_less");
+        const navbarIconMenu = document.getElementById("navbar-mobile-icon-menu");
         const dropdown = document.getElementById("navbar-mobile-dropdown");
         let navbarExpanded = false;
 
         const toggleExpandNavbar = () => {
-            if (navbarIcon) {
+            if (navbarIconMenu && navbarIconExpandLess) {
                 navbarExpanded = !navbarExpanded;
                 if (navbarExpanded) {
-                    navbarIcon.textContent = "expand_less";
                     dropdown?.classList.remove("hidden");
+                    navbarIconMenu.classList.add("hidden");
+                    navbarIconExpandLess.classList.remove("hidden");
                 } else {
-                    navbarIcon.textContent = "menu";
                     dropdown?.classList.add("hidden");
+                    navbarIconMenu.classList.remove("hidden");
+                    navbarIconExpandLess.classList.add("hidden");
                 }
             }
         };
