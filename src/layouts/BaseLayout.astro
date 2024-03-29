@@ -1,7 +1,8 @@
 ---
-const { title } = Astro.props;
+import '../styles/base.css'
 import NavbarBase from "../components/NavbarBase.astro"
 
+const { title } = Astro.props;
 const siteTitle = title === "Alif Yasa" ? "Home" : title
 ---
 <html lang="en">
