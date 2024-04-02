@@ -9,7 +9,27 @@ const siteTitle = title === "Alif Yasa" ? "Home" : title
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,400&display=swap" rel="stylesheet">
+    <style>
+      @font-face {
+        font-family: 'Satoshi';
+        src: url('/fonts/satoshi/400/satoshi_400.ttf') format('ttf'), 
+        url('/fonts/satoshi/400/satoshi_400.woff') format('woff'),
+        url('/fonts/satoshi/400/satoshi_400.woff2') format('woff2');
+        font-weight: 400;
+        font-display: swap;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'Satoshi';
+        src: url('/fonts/satoshi/500/satoshi_500.ttf') format('ttf'), 
+        url('/fonts/satoshi/500/satoshi_500.woff') format('woff'),
+        url('/fonts/satoshi/500/satoshi_500.woff2') format('woff2');
+        font-weight: 500;
+        font-display: swap;
+        font-style: normal;
+      }
+    </style>
     <title>Alif Yasa | { siteTitle }</title>
   </head>
   <body class="font-satoshi bg-light-gray text-deep-black">
