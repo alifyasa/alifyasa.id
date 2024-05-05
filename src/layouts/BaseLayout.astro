@@ -2,8 +2,13 @@
 import '@/styles/base.css'
 import NavbarBase from "@/components/NavbarBase.astro"
 
-const { title } = Astro.props;
-const siteTitle = title === "Alif Yasa" ? "Home" : title
+interface Props {
+  title: string;
+  siteTitle?: string;
+}
+
+const { title, siteTitle } = Astro.props;
+const displaySiteTitle = siteTitle ?? title;
 ---
 <html lang="en">
   <head>
@@ -12,7 +17,7 @@ const siteTitle = title === "Alif Yasa" ? "Home" : title
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    <title>Alif Yasa | { siteTitle }</title>
+    <title>Alif Yasa | { displaySiteTitle }</title>
   </head>
   <body class="font-rubik bg-background text-text">
     <header>
