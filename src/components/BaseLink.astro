@@ -1,0 +1,16 @@
+---
+interface Props {
+    href: typeof HTMLAnchorElement.prototype.href;
+    target?: typeof HTMLAnchorElement.prototype.target;
+    text?: string;
+}
+
+const { href, text, target = "_blank" } = Astro.props
+const displayText = text ?? href
+---
+
+<a 
+    href={href} 
+    target={target} 
+    class="hover:underline text-accent"
+>{displayText}</a>

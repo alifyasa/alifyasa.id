@@ -1,20 +1,41 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro"
+import BaseLink from "@/components/BaseLink.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Projects">
 	<div class="space-y-3.5">
 		<section>
-			<h1 class="text-2xl font-medium leading-loose">LogBook</h1>
-			<p>Track your day-to-day life. Made using HTMX. Deployed fully serverless using Cloudflare Workers and Cloudflare D1 Serverless Database. Visit it at <a href="https://logbook.alifyasa.id" target="_blank" class="underline">https://logbook.alifyasa.id</a>. See the source code at <a href="https://github.com/alifyasa/logbook" target="_blank" class="underline">https://github.com/alifyasa/logbook</a>.</p>
+			<h1 class="text-3xl font-medium leading-loose">LogBook</h1>
+			<p>
+				Track your day-to-day life. Made using HTMX. Deployed fully
+				serverless using Cloudflare Workers and Cloudflare D1 Serverless
+				Database. Visit it at <BaseLink
+					href="https://logbook.alifyasa.id"
+				/>. See the source code at <BaseLink
+					href="https://github.com/alifyasa/logbook"
+				/>.
+			</p>
 		</section>
 		<section>
-			<h1 class="text-2xl font-medium leading-loose">Git Faker</h1>
-			<p>Simulate git history as a <i>non-homogenenous poisson process</i> and create a git repository based on the simulation result. Made using Python. See the source code at <a href="https://github.com/alifyasa/git-faker" target="_blank" class="underline">https://github.com/alifyasa/git-faker</a>.</p>
+			<h1 class="text-3xl font-medium leading-loose">Git Faker</h1>
+			<p>
+				Simulate git history as a <i>non-homogenenous poisson process</i
+				> and create a git repository based on the simulation result. Made
+				using Python. See the source code at <BaseLink
+					href="https://github.com/alifyasa/git-faker"
+				/>.
+			</p>
 		</section>
 		<section>
-			<h1 class="text-2xl font-medium leading-loose">Web Clipboard</h1>
-			<p>Web-based service that acts like a clipboard. Made using Go. Write data using TCP, get a link to download data using HTTP. See the source code at <a href="https://github.com/alifyasa/web-clipboard" target="_blank" class="underline">https://github.com/alifyasa/web-clipboard</a>.</p>
+			<h1 class="text-3xl font-medium leading-loose">Web Clipboard</h1>
+			<p>
+				Web-based service that acts like a clipboard. Made using Go.
+				Write data using TCP, get a link to download data using HTTP.
+				See the source code at <BaseLink
+					href="https://github.com/alifyasa/web-clipboard"
+				/>.
+			</p>
 		</section>
 	</div>
 </BaseLayout>

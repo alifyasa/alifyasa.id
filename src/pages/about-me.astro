@@ -1,9 +1,29 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro"
+import BaseLink from "@/components/BaseLink.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="About Me">
-	<p class="mb-2">I'm Alif. I'm currently an 8th semester student at <a href="https://itb.ac.id/" target="_blank" class="underline">Institut Teknologi Bandung</a> studying Informatics Engineering.</p>
-	<p class="mb-2">Go to my <a href="https://github.com/alifyasa" target="_blank" class="underline">GitHub</a> to see small projects that are not included in the <a href="/projects" class="underline" target="_blank">Projects</a> page.</p>
-	<p>Contact me through my <a href="https://www.linkedin.com/in/alifyasa" target="_blank" class="underline">LinkedIn</a> or email at <a href="mailto:alif@alifyasa.id" class="underline">alif@alifyasa.id</a>.</p>
+	<p class="mb-2">
+		I'm Alif. I'm currently an 8th semester student at <BaseLink
+			href="https://itb.ac.id/"
+			text="Institut Teknologi Bandung"
+		/> studying Informatics Engineering.
+	</p>
+	<p class="mb-2">
+		Go to my <BaseLink href="https://github.com/alifyasa" text="GitHub" /> to
+		see small projects that are not included in the <BaseLink
+			href="/projects"
+			text="Projects"
+		/> page.
+	</p>
+	<p>
+		Contact me through my <BaseLink
+			href="https://www.linkedin.com/in/alifyasa"
+			text="LinkedIn"
+		/> or email at <BaseLink
+			href="mailto:alif@alifyasa.id"
+			text="alif@alifyasa.id"
+		/>.
+	</p>
 </BaseLayout>

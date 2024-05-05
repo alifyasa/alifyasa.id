@@ -9,17 +9,18 @@ const siteTitle = title === "Alif Yasa" ? "Home" : title
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preload" href="/fonts/satoshi/400/satoshi_400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="/fonts/satoshi/500/satoshi_500.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <title>Alif Yasa | { siteTitle }</title>
   </head>
-  <body class="font-satoshi bg-light-gray text-deep-black">
+  <body class="font-rubik bg-background text-text">
     <header>
       <NavbarBase />
     </header>
-    <main class="w-full relative md:w-3/5 md:mx-auto top-14 px-3.5 py-7 text-xl sm:p-7 sm:pb-14">
+    <main class="w-full relative md:w-3/5 md:mx-auto top-16 px-3.5 py-7 text-xl sm:px-7 sm:py-14 leading-relaxed">
       <article>
-        <h1 class="text-4xl font-medium pb-3.5">{title}</h1>
+        <h1 class="text-5xl font-semibold pb-7">{title}</h1>
         <slot />
       </article>  
     </main>    
