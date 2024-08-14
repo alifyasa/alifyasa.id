@@ -45,7 +45,7 @@ const breadcrumbs: Breadcrumb[] = fullPath.map((path, index, fullArray) => {
 <div class="flex capitalize gap-2 mb-8">
     {
         breadcrumbs.map((path, index, fullArray) => (
-            <div>
+            <div class="flex gap-2 items-center">
                     <Link href={path.href} openHere>
                         {path.title}
                     </Link>
