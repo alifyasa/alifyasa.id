@@ -1,0 +1,47 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Heading1 from "../components/Heading1.astro";
+import Paragraph from "../components/Paragraph.astro";
+import Link from "../components/Link.astro";
+import Heading2 from "../components/Heading2.astro";
+---
+
+<BaseLayout title="About Me">
+	<Heading1>
+		About Me
+	</Heading1>
+	<Paragraph>
+		I'm Alif Yasa. I'm interested in android development, reverse engineering, and machine learning.
+        See my projects in <Link href="https://github.com/alifyasa">my GitHub</Link>.
+	</Paragraph>
+    <Heading2>
+        Experiences
+    </Heading2>
+    <Paragraph>
+        Software Engineer at <Link href="https://socl.es/">Socles</Link> from Jul 2023 until Now. Worked with React Native, Django, AWS, and GCP.
+    </Paragraph>
+    <Paragraph>
+        Lab Assistant at Institut Teknologi Bandung's Distributed Systems Lab from Jul 2022 - Jul 2024.
+    </Paragraph>
+    <Heading2>
+        Educations
+    </Heading2>
+    <Paragraph>
+        <Link href="https://itb.ac.id/">Institut Teknologi Bandung</Link>. Informatics Engineering. 2020 - 2024.
+    </Paragraph>
+    <Heading2>
+        Links
+    </Heading2>
+    <Paragraph>
+        GitHub.
+        <Link href="https://github.com/alifyasa">https://github.com/alifyasa</Link>.
+    </Paragraph>
+    <Paragraph>
+        LinkedIn.
+        <Link href="https://www.linkedin.com/in/alifyasa">https://www.linkedin.com/in/alifyasa</Link>.
+    </Paragraph>
+    <Paragraph>
+        e-mail.
+        <Link href="mailto:alif@alifyasa.id">alif@alifyasa.id</Link>.
+    </Paragraph>
+</BaseLayout>

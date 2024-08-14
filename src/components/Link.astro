@@ -1,0 +1,15 @@
+---
+interface Props {
+    href: string,
+    openHere?: boolean
+}
+const {
+    href,
+    openHere = false
+}: Props = Astro.props
+---
+<a 
+    href={href} 
+    target={openHere ? "_self" : "_blank"}
+    class="hover:underline text-blue-800"
+><slot></slot></a>
