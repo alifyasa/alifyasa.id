@@ -1,5 +1,5 @@
 {
-  "name": "alifyasa.id",
+  "name": "alifyasa-id",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,10 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.10",
-    "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.5.10",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5.4.3"
+    "astro": "^4.13.4",
+    "@astrojs/check": "^0.9.2",
+    "typescript": "^5.5.4"
   }
 }
