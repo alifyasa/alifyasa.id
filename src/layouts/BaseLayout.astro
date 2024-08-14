@@ -3,6 +3,7 @@ interface Props {
 	title?: string;
 }
 const { title }: Props = Astro.props;
+const headTitle = title ? `${title} - Alif Yasa` : "Alif Yasa";
 
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 ---
@@ -13,16 +14,14 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Alif Yasa</title>
+		<title>{headTitle}</title>
 	</head>
 	<body class="font-sans max-w-3xl mx-auto xl:p-8 p-4">
 		<nav>
 			<Breadcrumbs pageTitle={title} />
 		</nav>
-		<main>
-			<article>
-				<slot />
-			</article>
-		</main>
+		<article>
+			<slot />
+		</article>
 	</body>
 </html>
