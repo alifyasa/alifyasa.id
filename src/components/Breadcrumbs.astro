@@ -2,9 +2,9 @@
 import Link from "./Link.astro";
 
 interface Props {
-    pageTitle?: string
+    pageTitle?: string;
 }
-const { pageTitle }: Props = Astro.props
+const { pageTitle }: Props = Astro.props;
 const fullPath = "index"
     .concat(Astro.url.pathname)
     .split("/")
@@ -21,10 +21,18 @@ const breadcrumbs: Breadcrumb[] = fullPath.map((path, index, fullArray) => {
     if (path === "index") {
         href = "/";
         title = "Home";
+        return {
+            href,
+            title,
+        };
     }
 
     if (index === fullArray.length - 1) {
-        title = pageTitle || path
+        title = pageTitle || path;
+        return {
+            href,
+            title,
+        };
     }
 
     return {
