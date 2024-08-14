@@ -1,16 +1,18 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Heading1 from "../components/Heading1.astro";
+import Paragraph from "../components/Paragraph.astro";
+import Link from "../components/Link.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+	<Breadcrumbs/>
+	<Heading1>
+		Hello!
+	</Heading1>
+	<Paragraph>
+		I'm Alif. I'm interested in android development, reverse engineering, and machine learning.
+		<Link href="about" openHere><i>more about me</i></Link>.
+	</Paragraph>	
+</BaseLayout>

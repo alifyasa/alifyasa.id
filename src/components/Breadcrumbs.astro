@@ -1,0 +1,40 @@
+---
+import Link from "./Link.astro";
+
+const fullPath = "index"
+    .concat(Astro.url.pathname)
+    .split("/")
+    .filter((path) => path !== "");
+
+interface Breadcrumb {
+    href: string;
+    title: string;
+}
+const breadcrumbs: Breadcrumb[] = fullPath.map((path) => {
+    let href = path;
+    let title = path;
+
+    if (path === "index") {
+        href = "/";
+        title = "Home";
+    }
+
+    return {
+        href,
+        title,
+    };
+});
+---
+
+<div class="flex capitalize gap-2 mb-8">
+    {
+        breadcrumbs.map((path, index, fullArray) => (
+            <>
+                <Link href={path.href} openHere>
+                    {path.title}
+                </Link>
+                {index !== fullArray.length - 1 && <span>{">"}</span>}
+            </>
+        ))
+    }
+</div>
