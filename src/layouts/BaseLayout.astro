@@ -1,8 +1,8 @@
 ---
 interface Props {
-	title?: string
+	title?: string;
 }
-const { title }: Props = Astro.props
+const { title }: Props = Astro.props;
 
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 ---
@@ -16,7 +16,13 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
 		<title>Alif Yasa</title>
 	</head>
 	<body class="font-sans max-w-3xl mx-auto xl:p-8 p-4">
-		<Breadcrumbs pageTitle={title} />
-		<slot></slot>
+		<nav>
+			<Breadcrumbs pageTitle={title} />
+		</nav>
+		<main>
+			<article>
+				<slot />
+			</article>
+		</main>
 	</body>
 </html>
