@@ -15,7 +15,7 @@ interface Breadcrumb {
     title: string;
 }
 const breadcrumbs: Breadcrumb[] = fullPath.map((path, index, fullArray) => {
-    let href = "/".concat(fullArray.slice(1, index + 1).join("/"));
+    let href = "/".concat(fullArray.slice(1, index + 1).join("/").concat("/"));
     let title = path;
 
     if (path === "index") {
