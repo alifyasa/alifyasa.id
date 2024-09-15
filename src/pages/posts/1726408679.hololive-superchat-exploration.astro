@@ -1,0 +1,66 @@
+---
+import Heading1 from "../../components/Heading1.astro";
+import Heading2 from "../../components/Heading2.astro";
+import Paragraph from "../../components/Paragraph.astro";
+import Link from "../../components/Link.astro";
+import OrderedList from "../../components/OrderedList.astro";
+import ListItem from "../../components/ListItem.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title=`Hololive Superchat Exploration`>
+    <Heading1> Hololive Superchat Exploration </Heading1>
+    <Heading2> Important Links </Heading2>
+    <Paragraph>
+        <OrderedList>
+            <ListItem>
+                Google Drive.
+                <Link
+                    href="https://drive.google.com/drive/folders/1x8qdLCB1YbquBB75XNtDBuahT0nfJ_ZH?usp=sharing"
+                >
+                    https://drive.google.com/drive/folders/1x8qdLCB1YbquBB75XNtDBuahT0nfJ_ZH?usp=sharing
+                </Link>
+            </ListItem>
+        </OrderedList>
+    </Paragraph>
+    <Heading2>Data Gathering & Preparation</Heading2>
+    <Paragraph>
+        I scraped Hololyzer's superchat data (<Link
+            href="https://hololyzer.net/youtube/"
+            >https://hololyzer.net/youtube/</Link
+        >). The dataset can be accessed from Google Drive at <code>superchats/2024.csv</code>.
+    </Paragraph>
+    <Paragraph>
+        I first substituted non-latin channel names with their latin counterparts.
+        Then I parse the superchat themselves, separating the currency and amount.
+    </Paragraph>
+    <Paragraph>
+        I encountered a problem when trying to convert the currency to USD, I found
+        out that there are no easy ways to obtain exchange rates for a certain date.
+        I have to either pay for an API service or manually download from sites like
+        <Link href="https://investing.com/">https://investing.com/</Link>.
+        Here are some interesting services I found:
+        <OrderedList>
+            <ListItem>
+                <Link href="https://github.com/fawazahmed0/exchange-api">https://github.com/fawazahmed0/exchange-api</Link>
+            </ListItem>
+            <ListItem>
+                <Link href="https://www.exchangerate-api.com/docs/free">https://www.exchangerate-api.com/docs/free</Link>
+            </ListItem>
+        </OrderedList>
+    </Paragraph>
+    <Paragraph>
+        In the end, I gave up and just used the latest exchange rates.
+    </Paragraph>
+    <Heading2>Exploring the Data</Heading2>
+    <Paragraph>
+        I first tried to explore exclusively IDR superchats. In the end, I decided to
+        explore all currencies. I found out about top superchat currencies of 2024 so far,
+        top superchat currencies per month, and top channels per currency.
+    </Paragraph>
+    <Paragraph>
+        I made a chart showing the top channels per superchat currency.
+        The chart can be found at the Google Drive link at <code>images/Untitled.png</code>.
+        Read more details about the exploration in the <code>ipnyb</code> file at the Google Drive link.
+    </Paragraph>
+</BaseLayout>
