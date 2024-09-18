@@ -1,0 +1,689 @@
+---
+import Heading1 from "../../../components/Heading1.astro";
+import Heading2 from "../../../components/Heading2.astro";
+import Paragraph from "../../../components/Paragraph.astro";
+import Link from "../../../components/Link.astro";
+import OrderedList from "../../../components/OrderedList.astro";
+import ListItem from "../../../components/ListItem.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title=`Hololive Superchat Exploration`>
+    <Heading1> Hololive Superchat Exploration </Heading1>
+    <Heading2> Important Links </Heading2>
+    <Paragraph>
+        <OrderedList>
+            <ListItem>
+                Google Drive.
+                <Link
+                    href="https://drive.google.com/drive/folders/1x8qdLCB1YbquBB75XNtDBuahT0nfJ_ZH?usp=sharing"
+                >
+                    https://drive.google.com/drive/folders/1x8qdLCB1YbquBB75XNtDBuahT0nfJ_ZH?usp=sharing
+                </Link>
+            </ListItem>
+        </OrderedList>
+    </Paragraph>
+    <Heading2>Data Gathering & Preparation</Heading2>
+    <Paragraph>
+        I scraped Hololyzer's superchat data (<Link
+            href="https://hololyzer.net/youtube/"
+            >https://hololyzer.net/youtube/</Link
+        >). The dataset can be accessed from Google Drive at <code
+            >superchats/2024.csv</code
+        >.
+    </Paragraph>
+    <Paragraph>
+        I first substituted non-latin channel names with their latin
+        counterparts. Then I parse the superchat themselves, separating the
+        currency and amount.
+    </Paragraph>
+    <Paragraph>
+        I encountered a problem when trying to convert the currency to USD, I
+        found out that there are no easy ways to obtain exchange rates for a
+        certain date. I have to either pay for an API service or manually
+        download from sites like
+        <Link href="https://investing.com/">https://investing.com/</Link>. Here
+        are some interesting services I found:
+        <OrderedList>
+            <ListItem>
+                <Link href="https://github.com/fawazahmed0/exchange-api"
+                    >https://github.com/fawazahmed0/exchange-api</Link
+                >
+            </ListItem>
+            <ListItem>
+                <Link href="https://www.exchangerate-api.com/docs/free"
+                    >https://www.exchangerate-api.com/docs/free</Link
+                >
+            </ListItem>
+        </OrderedList>
+    </Paragraph>
+    <Paragraph>
+        In the end, I gave up and just used the latest exchange rates.
+    </Paragraph>
+    <Heading2>Top Channels per Currency</Heading2>
+    <Paragraph>
+        <img
+            src="/images/Talents per Currency/AED.png"
+            alt="AED.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/ARS.png"
+            alt="ARS.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/AUD.png"
+            alt="AUD.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/BGN.png"
+            alt="BGN.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/BOB.png"
+            alt="BOB.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/BRL.png"
+            alt="BRL.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/BYN.png"
+            alt="BYN.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/CAD.png"
+            alt="CAD.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/CHF.png"
+            alt="CHF.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/CLP.png"
+            alt="CLP.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/COP.png"
+            alt="COP.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/CRC.png"
+            alt="CRC.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/CZK.png"
+            alt="CZK.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/DKK.png"
+            alt="DKK.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/DOP.png"
+            alt="DOP.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/EGP.png"
+            alt="EGP.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/EUR.png"
+            alt="EUR.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/GBP.png"
+            alt="GBP.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/GTQ.png"
+            alt="GTQ.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/HKD.png"
+            alt="HKD.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/HNL.png"
+            alt="HNL.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/HUF.png"
+            alt="HUF.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/IDR.png"
+            alt="IDR.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/ILS.png"
+            alt="ILS.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/INR.png"
+            alt="INR.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/ISK.png"
+            alt="ISK.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/JOD.png"
+            alt="JOD.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/JPY.png"
+            alt="JPY.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/KES.png"
+            alt="KES.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/KRW.png"
+            alt="KRW.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/MXN.png"
+            alt="MXN.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/MYR.png"
+            alt="MYR.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/NGN.png"
+            alt="NGN.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/NIO.png"
+            alt="NIO.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/NOK.png"
+            alt="NOK.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/NZD.png"
+            alt="NZD.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/PEN.png"
+            alt="PEN.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/PHP.png"
+            alt="PHP.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/PLN.png"
+            alt="PLN.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/PYG.png"
+            alt="PYG.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/QAR.png"
+            alt="QAR.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/RON.png"
+            alt="RON.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/RSD.png"
+            alt="RSD.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/SAR.png"
+            alt="SAR.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/SEK.png"
+            alt="SEK.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/SGD.png"
+            alt="SGD.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/THB.png"
+            alt="THB.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/TRY.png"
+            alt="TRY.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/TWD.png"
+            alt="TWD.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/USD.png"
+            alt="USD.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/UYU.png"
+            alt="UYU.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/VND.png"
+            alt="VND.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Talents per Currency/ZAR.png"
+            alt="ZAR.png Talents"
+            width="100%"
+        />
+    </Paragraph>
+    <Heading2>Top Currencies per Channel</Heading2>
+    <Paragraph>
+        <img
+            src="/images/Currencies per Talent/AZKi.png"
+            alt="AZKi.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Airani Iofifteen.png"
+            alt="Airani Iofifteen.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Akai Haato.png"
+            alt="Akai Haato.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Aki Rosenthal.png"
+            alt="Aki Rosenthal.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Amane Kanata.png"
+            alt="Amane Kanata.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Anya Melfissa.png"
+            alt="Anya Melfissa.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Ayunda Risu.png"
+            alt="Ayunda Risu.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Cecilia Immergreen.png"
+            alt="Cecilia Immergreen.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Ceres Fauna.png"
+            alt="Ceres Fauna.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Elizabeth Rose Bloodflame.png"
+            alt="Elizabeth Rose Bloodflame.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/FUWAMOCO.png"
+            alt="FUWAMOCO.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Gawr Gura.png"
+            alt="Gawr Gura.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Gigi Murin.png"
+            alt="Gigi Murin.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Hakos Baelz.png"
+            alt="Hakos Baelz.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Hakui Koyori.png"
+            alt="Hakui Koyori.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Himemori Luna.png"
+            alt="Himemori Luna.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Hiodoshi Ao.png"
+            alt="Hiodoshi Ao.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Hoshimachi Suisei.png"
+            alt="Hoshimachi Suisei.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Houshou Marine.png"
+            alt="Houshou Marine.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/IRyS.png"
+            alt="IRyS.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Ichijou Ririka.png"
+            alt="Ichijou Ririka.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Inugami Korone.png"
+            alt="Inugami Korone.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Juufuutei Raden.png"
+            alt="Juufuutei Raden.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Kaela Kovalskia.png"
+            alt="Kaela Kovalskia.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Kazama Iroha.png"
+            alt="Kazama Iroha.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Kobo Kanaeru.png"
+            alt="Kobo Kanaeru.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Koseki Bijou.png"
+            alt="Koseki Bijou.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Kureiji Ollie.png"
+            alt="Kureiji Ollie.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/La+ Darknesss.png"
+            alt="La+ Darknesss.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Minato Aqua.png"
+            alt="Minato Aqua.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Momosuzu Nene.png"
+            alt="Momosuzu Nene.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Moona Hoshinova.png"
+            alt="Moona Hoshinova.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Mori Calliope.png"
+            alt="Mori Calliope.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Murasaki Shion.png"
+            alt="Murasaki Shion.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Nakiri Ayame.png"
+            alt="Nakiri Ayame.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Nanashi Mumei.png"
+            alt="Nanashi Mumei.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Natsuiro Matsuri.png"
+            alt="Natsuiro Matsuri.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Nekomata Okayu.png"
+            alt="Nekomata Okayu.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Nerissa Ravencroft.png"
+            alt="Nerissa Ravencroft.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Ninomae Ina_nis.png"
+            alt="Ninomae Ina_nis.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Omaru Polka.png"
+            alt="Omaru Polka.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Ookami Mio.png"
+            alt="Ookami Mio.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Oozora Subaru.png"
+            alt="Oozora Subaru.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Otonose Kanade.png"
+            alt="Otonose Kanade.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Ouro Kronii.png"
+            alt="Ouro Kronii.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Pavolia Reine.png"
+            alt="Pavolia Reine.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Raora Panthera.png"
+            alt="Raora Panthera.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Robocosan.png"
+            alt="Robocosan.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Sakamata Chloe.png"
+            alt="Sakamata Chloe.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Sakura Miko.png"
+            alt="Sakura Miko.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Shiori Novella.png"
+            alt="Shiori Novella.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Shirakami Fubuki.png"
+            alt="Shirakami Fubuki.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Shiranui Flare.png"
+            alt="Shiranui Flare.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Shirogane Noel.png"
+            alt="Shirogane Noel.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Shishiro Botan.png"
+            alt="Shishiro Botan.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Takanashi Kiara.png"
+            alt="Takanashi Kiara.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Takane Lui.png"
+            alt="Takane Lui.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Todoroki Hajime.png"
+            alt="Todoroki Hajime.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Toki no Sora.png"
+            alt="Toki no Sora.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Tokoyami Towa.png"
+            alt="Tokoyami Towa.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Tsunomaki Watame.png"
+            alt="Tsunomaki Watame.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Usada Pekora.png"
+            alt="Usada Pekora.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Vestia Zeta.png"
+            alt="Vestia Zeta.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Watson Amelia.png"
+            alt="Watson Amelia.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Yozora Mel.png"
+            alt="Yozora Mel.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Yukihana Lamy.png"
+            alt="Yukihana Lamy.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/Yuzuki Choco.png"
+            alt="Yuzuki Choco.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/hololive DEV IS.png"
+            alt="hololive DEV IS.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/hololive English.png"
+            alt="hololive English.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/hololive Indonesia.png"
+            alt="hololive Indonesia.png Talents"
+            width="100%"
+        />
+        <img
+            src="/images/Currencies per Talent/hololive JP.png"
+            alt="hololive JP.png Talents"
+            width="100%"
+        />
+    </Paragraph>
+</BaseLayout>
