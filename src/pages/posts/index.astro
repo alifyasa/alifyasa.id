@@ -3,20 +3,32 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Heading1 from "../../components/Heading1.astro";
 import Paragraph from "../../components/Paragraph.astro";
 import Link from "../../components/Link.astro";
+
+import { getStaticPaths } from "pages/posts/[...slug].astro";
+import { slugify, pathToChild } from "lib";
+import { format } from "date-fns";
+
+export const getPostEntries = async (currentUrl: string) => (await getStaticPaths()).map(({ props }) => ({
+  ...props.entry.data,
+  url: pathToChild(currentUrl, slugify(props.entry.data.title)),
+  pubDate: format(props.entry.data.pubDate, "yyyy/MM/dd"),
+})).toSorted((a, b) => a.pubDate.localeCompare(b.pubDate) * -1); // Newest first
+
+const postEntries = await getPostEntries(Astro.url.pathname)
 ---
 
 <BaseLayout title="Posts">
-    <Heading1>Posts</Heading1>
-    <Paragraph>
-        2024/09/15 - 
-        <Link openHere href="/posts/1726408679.hololive-superchat-exploration/">
-            Hololive Superchat Exploration
-        </Link>
-    </Paragraph>
-    <Paragraph>
-        2024/08/14 - 
-        <Link openHere href="/posts/1723631437.reverse-engineering-undangan-malware/">
-            Reverse Engineering "Undangan APK" Malware
-        </Link>
-    </Paragraph>
+  <Heading1>Posts</Heading1>
+  {
+    postEntries.map((entry) => {
+      return (
+        <Paragraph>
+          {entry.pubDate} -
+          <Link openHere href={entry.url}>
+            {entry.title}
+          </Link>
+        </Paragraph>
+      );
+    })
+  }
 </BaseLayout>

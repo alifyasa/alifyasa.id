@@ -4,6 +4,9 @@ import Heading1 from "../components/Heading1.astro";
 import Paragraph from "../components/Paragraph.astro";
 import Link from "../components/Link.astro";
 import Heading2 from "../components/Heading2.astro";
+import { getPostEntries } from "pages/posts/index.astro";
+
+const postEntries = await getPostEntries(`${Astro.url.pathname}posts/`)
 ---
 
 <BaseLayout title="Home">
@@ -17,16 +20,16 @@ import Heading2 from "../components/Heading2.astro";
 	<Heading2>
 		Recent Posts (<Link href="/posts/" openHere>see all</Link>)
 	</Heading2>
-    <Paragraph>
-        2024/09/15 - 
-        <Link openHere href="/posts/1726408679.hololive-superchat-exploration/">
-            Hololive Superchat Exploration
-        </Link>
-    </Paragraph>
-    <Paragraph>
-        2024/08/14 - 
-        <Link openHere href="/posts/1723631437.reverse-engineering-undangan-malware/">
-            Reverse Engineering "Undangan APK" Malware
-        </Link>
-    </Paragraph>
+    {
+        postEntries.map((entry) => {
+          return (
+            <Paragraph>
+              {entry.pubDate} -
+              <Link openHere href={entry.url}>
+                {entry.title}
+              </Link>
+            </Paragraph>
+          );
+        })
+      }
 </BaseLayout>

@@ -1,3 +1,7 @@
-<li class="list-item text-lg">
+---
+const props = Astro.props
+---
+
+<li class="list-item text-lg" {...props}>
     <slot></slot>
 </li>

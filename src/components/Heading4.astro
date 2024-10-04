@@ -1,3 +1,7 @@
-<h4 class="font-bold text-xl mb-2">
+---
+const props = Astro.props;
+---
+
+<h4 class="font-bold text-xl mb-2" {...props}>
     <slot></slot>
 </h4>

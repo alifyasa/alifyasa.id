@@ -1,3 +1,7 @@
-<p class="text-lg mb-2">
+---
+const props = Astro.props
+---
+
+<p class="text-lg mb-2" {...props}>
     <slot></slot>
 </p>
