@@ -1,64 +1,69 @@
 ---
-import Link from "./Link.astro";
+import Link from './Link.astro';
 
 interface Props {
-    pageTitle?: string;
+  pageTitle?: string;
 }
 const { pageTitle }: Props = Astro.props;
-const fullPath = "index"
-    .concat(Astro.url.pathname)
-    .split("/")
-    .filter((path) => path !== "");
+const fullPath = 'index'
+  .concat(Astro.url.pathname)
+  .split('/')
+  .filter((path) => path !== '');
 
 interface Breadcrumb {
-    href: string;
-    title: string;
+  href: string;
+  title: string;
 }
 const breadcrumbs: Breadcrumb[] = fullPath.map((path, index, fullArray) => {
-    let href = "/".concat(fullArray.slice(1, index + 1).join("/").concat("/"));
-    let title = path;
+  let href = '/'.concat(
+    fullArray
+      .slice(1, index + 1)
+      .join('/')
+      .concat('/')
+  );
+  let title = path;
 
-    if (path === "index") {
-        href = "/";
-        title = "Home";
-        return {
-            href,
-            title,
-        };
-    }
-
-    if (index === fullArray.length - 1) {
-        title = pageTitle || path;
-        return {
-            href,
-            title,
-        };
-    }
-
+  if (path === 'index') {
+    href = '/';
+    title = 'Home';
     return {
-        href,
-        title,
+      href,
+      title,
     };
+  }
+
+  if (index === fullArray.length - 1) {
+    title = pageTitle || path;
+    return {
+      href,
+      title,
+    };
+  }
+
+  return {
+    href,
+    title,
+  };
 });
 ---
 
 <div class="flex gap-2 xl:mb-8 mb-4">
-    {
-        breadcrumbs.map((path, index, fullArray) => {
-            const isLast = index === fullArray.length - 1;
-            const isTitleOverriden = pageTitle !== undefined;
-            return (
-                <div
-                    class={"flex gap-2 items-center".concat(
-                        isLast && isTitleOverriden ? "" : " capitalize",
-                    )}
-                >
-                    <Link href={path.href} openHere>
-                        {path.title}
-                    </Link>
-                    {!isLast && <span>{">"}</span>}
-                </div>
-            );
-        })
-    }
+  {
+    breadcrumbs.map((path, index, fullArray) => {
+      const isLast = index === fullArray.length - 1;
+      const isTitleOverriden = pageTitle !== undefined;
+      return (
+        <div
+          class={'flex gap-2 items-center'.concat(
+            isLast && isTitleOverriden ? '' : ' capitalize'
+          )}
+        >
+          <Link href={path.href} openHere>
+            {path.title}
+          </Link>
+          {!isLast && <span>{'>'}</span>}
+        </div>
+      );
+    })
+  }
 </div>

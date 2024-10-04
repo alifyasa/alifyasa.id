@@ -1,14 +1,14 @@
 ---
-import type { HTMLAttributes } from 'astro/types'
+import type { HTMLAttributes } from 'astro/types';
 
-
-interface Props extends HTMLAttributes<"a">{
-    openHere?: boolean
+interface Props extends HTMLAttributes<'a'> {
+  openHere?: boolean;
 }
-const props: Props = Astro.props
+const props: Props = Astro.props;
 ---
-<a 
-    target={props.openHere ? "_self" : "_blank"}
-    class="hover:underline text-blue-800 dark:text-blue-500"
-    {...props}
-><slot></slot></a>
+
+<a
+  target={props.openHere ? '_self' : '_blank'}
+  class="hover:underline text-blue-800 dark:text-blue-500"
+  {...props}><slot /></a
+>

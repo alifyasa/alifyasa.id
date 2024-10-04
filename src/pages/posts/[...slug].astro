@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from 'layouts/BaseLayout.astro';
 import { slugify } from 'lib';
-import Heading1 from "components/Heading1.astro"
+import Heading1 from 'components/Heading1.astro';
 import Heading2 from 'components/Heading2.astro';
 import Heading3 from 'components/Heading3.astro';
 import Heading4 from 'components/Heading4.astro';
@@ -12,25 +12,28 @@ import OrderedList from 'components/OrderedList.astro';
 import Paragraph from 'components/Paragraph.astro';
 
 export async function getStaticPaths() {
-  const blogEntries = await getCollection("posts");
-  return blogEntries.map(entry => ({
-    params: { slug: slugify(entry.data.title) }, props: { entry },
+  const blogEntries = await getCollection('posts');
+  return blogEntries.map((entry) => ({
+    params: { slug: slugify(entry.data.title) },
+    props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render()
+const { Content } = await entry.render();
 ---
 
 <BaseLayout title={entry.data.title}>
-    <Content components={{
-        h1: Heading1,
-        h2: Heading2,
-        h3: Heading3,
-        h4: Heading4,
-        a: Link,
-        li: ListItem,
-        ol: OrderedList,
-        p: Paragraph,
-    }}/>
+  <Content
+    components={{
+      h1: Heading1,
+      h2: Heading2,
+      h3: Heading3,
+      h4: Heading4,
+      a: Link,
+      li: ListItem,
+      ol: OrderedList,
+      p: Paragraph,
+    }}
+  />
 </BaseLayout>

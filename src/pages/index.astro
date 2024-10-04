@@ -1,35 +1,34 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Heading1 from "../components/Heading1.astro";
-import Paragraph from "../components/Paragraph.astro";
-import Link from "../components/Link.astro";
-import Heading2 from "../components/Heading2.astro";
-import { getPostEntries } from "pages/posts/index.astro";
+import Heading1 from 'components/Heading1.astro';
+import Heading2 from 'components/Heading2.astro';
+import Link from 'components/Link.astro';
+import Paragraph from 'components/Paragraph.astro';
+import BaseLayout from 'layouts/BaseLayout.astro';
+import { getPostEntries } from 'pages/posts/index.astro';
 
-const postEntries = await getPostEntries(`${Astro.url.pathname}posts/`)
+const postEntries = await getPostEntries(`${Astro.url.pathname}posts/`);
 ---
 
 <BaseLayout title="Home">
-	<Heading1>
-		Hello!
-	</Heading1>
-	<Paragraph>
-		I'm Alif. I'm interested in android development, reverse engineering, and machine learning.
-		<Link href="/about/" openHere><i>more about me</i></Link>.
-	</Paragraph>	
-	<Heading2>
-		Recent Posts (<Link href="/posts/" openHere>see all</Link>)
-	</Heading2>
-    {
-        postEntries.map((entry) => {
-          return (
-            <Paragraph>
-              {entry.pubDate} -
-              <Link openHere href={entry.url}>
-                {entry.title}
-              </Link>
-            </Paragraph>
-          );
-        })
-      }
+  <Heading1> Hello! </Heading1>
+  <Paragraph>
+    I'm Alif. I'm interested in android development, reverse engineering, and
+    machine learning.
+    <Link href="/about/" openHere><i>more about me</i></Link>.
+  </Paragraph>
+  <Heading2>
+    Recent Posts (<Link href="/posts/" openHere>see all</Link>)
+  </Heading2>
+  {
+    postEntries.map((entry) => {
+      return (
+        <Paragraph>
+          {entry.pubDate} -
+          <Link openHere href={entry.url}>
+            {entry.title}
+          </Link>
+        </Paragraph>
+      );
+    })
+  }
 </BaseLayout>

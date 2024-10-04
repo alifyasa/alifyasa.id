@@ -1,27 +1,29 @@
 ---
 interface Props {
-	title?: string;
+  title?: string;
 }
 const { title }: Props = Astro.props;
-const headTitle = title ? `${title} - Alif Yasa` : "Alif Yasa";
+const headTitle = title ? `${title} - Alif Yasa` : 'Alif Yasa';
 
-import Breadcrumbs from "../components/Breadcrumbs.astro";
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{headTitle}</title>
-	</head>
-	<body class="font-sans max-w-3xl mx-auto xl:p-8 p-4 bg-neutral-50 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-300">
-		<nav>
-			<Breadcrumbs pageTitle={title} />
-		</nav>
-		<article>
-			<slot />
-		</article>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{headTitle}</title>
+  </head>
+  <body
+    class="font-sans max-w-3xl mx-auto xl:p-8 p-4 bg-neutral-50 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-300"
+  >
+    <nav>
+      <Breadcrumbs pageTitle={title} />
+    </nav>
+    <article>
+      <slot />
+    </article>
+  </body>
 </html>
