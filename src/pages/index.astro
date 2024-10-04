@@ -4,9 +4,7 @@ import Heading2 from 'components/Heading2.astro';
 import Link from 'components/Link.astro';
 import Paragraph from 'components/Paragraph.astro';
 import BaseLayout from 'layouts/BaseLayout.astro';
-import { getPostEntries } from 'pages/posts/index.astro';
-
-const postEntries = await getPostEntries(`${Astro.url.pathname}posts/`);
+import { postEntries } from 'pages/posts/index.astro';
 ---
 
 <BaseLayout title="Home">

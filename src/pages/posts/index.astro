@@ -8,16 +8,13 @@ import { getStaticPaths } from 'pages/posts/[...slug].astro';
 import { slugify, pathToChild } from 'lib';
 import { format } from 'date-fns';
 
-export const getPostEntries = async (currentUrl: string) =>
-  (await getStaticPaths())
-    .map(({ props }) => ({
-      ...props.entry.data,
-      url: pathToChild(currentUrl, slugify(props.entry.data.title)),
-      pubDate: format(props.entry.data.pubDate, 'yyyy/MM/dd'),
-    }))
-    .toSorted((a, b) => a.pubDate.localeCompare(b.pubDate) * -1); // Newest first
-
-const postEntries = await getPostEntries(Astro.url.pathname);
+export const postEntries = ((await getStaticPaths())
+  .map(({ props }) => ({
+    ...props.entry.data,
+    url: pathToChild('/posts', slugify(props.entry.data.title)),
+    pubDate: format(props.entry.data.pubDate, 'yyyy/MM/dd'),
+  }))
+  .toSorted((a, b) => a.pubDate.localeCompare(b.pubDate) * -1));
 ---
 
 <BaseLayout title="Posts">
