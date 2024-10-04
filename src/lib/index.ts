@@ -17,6 +17,9 @@ function slugify(title: string) {
 
 function pathToChild(currentPath: string, childPath: string) {
   const cleanedCurrentPath = currentPath.replace(/^\/+|\/+$/g, '');
+  if (cleanedCurrentPath === "") {
+    return `/${childPath}`
+  }
   return `/${cleanedCurrentPath}/${childPath}`;
 }
 
